@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cartas de Confesiones 💌</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #fff;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin: 20px 0;
+      font-size: 1.3em;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #ff5e78;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #e14a64;
+    }
+  </style>
+</head>
+<body>
+  <h1>💌 Cartas de Confesiones</h1>
+  <div class="card" id="cardText">Haz clic en una categoría para revelar una carta</div>
+  <div class="buttons">
+    <button onclick="mostrarCarta('amor')">❤️ Amor</button>
+    <button onclick="mostrarCarta('atrevido')">🔥 Atrevido</button>
+    <button onclick="mostrarCarta('divertido')">😂 Divertido</button>
+  </div>
+
+  <script>
+    const cartas = {
+      amor: [
+        "¿Qué es lo que más te enamora de mí?",
+        "¿Te gustaría una vida a mi lado? ¿Cómo la imaginas?",
+        "Dime una canción que te recuerde a mí y por qué.",
+        "¿Qué fue lo primero que te gustó de mí?",
+        "Si hoy fuera nuestra boda, ¿qué me dirías al oído?",
+        "¿Qué harías si nos viéramos mañana por sorpresa?",
+        "¿Cómo sería tu cita perfecta conmigo?",
+        "¿Qué detalle mío te derrite por dentro?",
+        "¿Qué nombre te gustaría que lleváramos como pareja?",
+        "¿Cómo te gustaría que te dijera 'te amo' la próxima vez?"
+      ],
+      atrevido: [
+        "Describe cómo me besarías lentamente.",
+        "¿Qué parte de mi cuerpo te gustaría explorar primero?",
+        "Cuéntame un deseo que te encienda conmigo.",
+        "Mándame un audio diciéndome algo caliente.",
+        "¿Qué prenda te gustaría quitarme primero?",
+        "Imagina que estamos solos... ¿qué harías tú primero?",
+        "¿Cuál fue la última fantasía en la que aparecí?",
+        "Dime una pose que te gustaría probar conmigo.",
+        "Si pudieras tocarme ahora, ¿dónde empezarías?",
+        "Dime algo travieso que quieras que yo haga."
+      ],
+      divertido: [
+        "¿Cuál es tu apodo más raro para mí?",
+        "Haz una voz graciosa y mándamela en audio.",
+        "Inventa una historia loca donde seamos espías enamorados.",
+        "¿Qué harías si aparezco disfrazado en tu casa?",
+        "¿Cuál sería nuestro nombre de superhéroes en pareja?",
+        "Si fuéramos dibujos animados, ¿quién seríamos?",
+        "Hazme reír: invéntate un chiste con mi nombre.",
+        "Imita mi voz y dime algo cursi.",
+        "Haz una lista de cosas ridículas que harías por mí.",
+        "Dime un talento tonto que tengas."
+      ]
+    };
+
+    function mostrarCarta(tipo) {
+      const carta = cartas[tipo][Math.floor(Math.random() * cartas[tipo].length)];
+      document.getElementById('cardText').innerText = carta;
+    }
+  </script>
+</body>
+</html>
